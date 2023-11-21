@@ -1,0 +1,69 @@
+.bigNumber {
+  font-size: 90px
+}
+
+.parameter {
+    font-size: 20px; /* Adjust size as needed */
+    color: #00087a; /* Adjust color as needed */
+}
+
+.dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 15px;
+    margin-top: 80px;
+    margin-bottom: 20px;
+}  
+
+.card {
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: #FCFCFC;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: calc(25% - 20px); /* 3 cards per row */
+}
+
+.number-card {
+    position: relative;
+}
+
+.number-card, .map-card, .chart-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px; /* or any other value depending on your needs */
+}
+
+.map-card, .chart-card {
+  height: 400px; /* provide more space for maps and charts */
+}
+
+.info-card{
+  background-color: #e8ae30;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.habito {
+  margin-bottom: 10px;
+}
+
+.nome-habito {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.consumo-ideal{
+  color: #00087a;
+}
+
+.consumo-usuario, .consumo-ideal {
+  font-style: italic;
+  font-size: 20px;
+}

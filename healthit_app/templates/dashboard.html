@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Leaflet.js -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.0.2"></script>
+  
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="{% static 'stylesDashboard.css' %}">
+  
+</head>
+<body>
+  
+  <header class="header">
+    <div class="overlap-group">
+      <img class="line-stroke" src="{% static 'images/linestroke1.svg' %}" />
+      <img class="img" src="{% static 'images/linestroke2.svg' %}" />
+      <a href="{% url 'forms' %}" ><div class="text-wrapper">Avaliação</div></a
+      >
+      <a href="{% url 'dashboard' %}" ><div class="div">Sua Saúde</div></a>
+    </div>
+    <div class="overlap-2">
+      <img class="line-stroke-2" src="{% static 'images/linestroke1.svg' %}" />
+      <a href="{% url 'login' %}" 
+        ><div class="text-wrapper-2">Entrar</div></a
+      >
+    </div>
+    <img class="logo" src="{% static 'images/logo.png' %}" />
+    <a href="{% url 'home' %}" >
+      <div class="text-wrapper-3">Health it!</div></a>
+  </header>
+  {% if request.user.is_authenticated %}
+
+    <div class="dashboard">
+       <div class="card info-card">
+           <h2>Alguma Comparação</h2>
+       </div>
+       <div class="card chart-card">
+            <h2>Horas de Sono</h2>
+            <span id="sonoUser", class ="bigNumber"></span> <!-- Your dynamic number -->
+            <span id="sonoIdeal", class ="parameter"></span> <!-- Your parameter -->
+        </div>
+       <div class="card chart-card">
+            <h2>Minutos Atividade Fisica</h2>
+            <span id="atvFisicaUser", class ="bigNumber"></span> <!-- Your dynamic number -->
+            <span id="atvFisicaIdeal", class ="parameter"></span> <!-- Your parameter -->
+        </div>
+        
+        <div class="card graph-card">
+            <h2>Média Atividade Fisica</h2>
+            <canvas id="MediaAtvFisicaChart"></canvas>
+        </div>
+        <div class="card info-card">
+             <h2>Alguma Comparação</h2>
+        </div>
+        <div class="card graph-card">
+            <h2>Peso x Meta</h2>
+            <canvas id="pesoTempoChart"<canvas>
+        </div>
+        <div class="card graph-card">
+            <h2>Macronutrientes</h2>
+            <canvas id="doughnutChart"></canvas>
+        </div>
+        <div class="card">
+            <h2>Hábitos Alimentares</h2>
+            <div id="habitosAlimentares">
+                <div class="habito">
+                    <span class="nome-habito">Sal: </span>
+                    <span class="consumo-usuario" id="salUsuario"></span> / Ideal:
+                    <span class="consumo-ideal" id="salIdeal"></span>
+                </div>
+                <div class="habito">
+                    <span class="nome-habito">Água: </span>
+                    <span class="consumo-usuario" id="aguaUsuario"></span> / Ideal:
+                    <span class="consumo-ideal" id="aguaIdeal"></span>
+                </div>
+                <div class="habito">
+                    <span class="nome-habito">Carne Vermelha: </span>
+                    <span class="consumo-usuario" id="carneVermelhaUsuario"></span> / Ideal:
+                    <span class="consumo-ideal" id="carneVermelhaIdeal"></span>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+
+    <!--<script type="module" src="{% static 'dashboard/index.js' %}"></script> -->
+  <script>
+      var sono = "{{ sono }}";
+  </script>
+    <script src="{% static 'scriptsDashboard3.js' %}">
+    </script>
+
+  {% endif %}
+  {% if not request.user.is_authenticated %}
+  <br>
+  <br>  
+  <br>
+  <br>
+  <br>
+    Você não está logado<br>
+    <a href="/users/login"> Login </a>
+  {% endif %}
+</body>
+</html>

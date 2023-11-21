@@ -1,0 +1,160 @@
+main {
+  width: 660px;
+  height: 510px;
+  margin: auto;
+  margin-top: 90px;
+  border: 2px solid #FFAD0E;
+  border-radius: 15px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+}
+
+main a {
+  text-decoration: none;
+}
+
+main a:hover {
+  text-decoration: underline;
+}
+
+.topnav {
+  display: flex;
+  justify-content: center;
+}
+
+.topnav-logo-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  color: #FFAD0E;
+  margin-top: 15px;
+}
+
+.topnav-logo {
+  width: 94px;
+}
+
+.content {
+  display: grid;
+  justify-content: center;
+}
+
+.content-msg {
+  text-align: center;
+  color: #000;
+  font-family: "Poppins-Bold", Helvetica;
+  font-size: 20px;
+  font-weight: 700;
+  width: 541px;
+
+  margin-top: 20px;
+}
+
+.content-email {
+  display: flex;
+  justify-content: center;
+}
+
+.content-email input {
+  display: flex;
+  justify-content: center;
+}
+
+.form-email {
+  text-align: center;
+  
+  display: grid;
+}
+
+.form-email label {
+  font-family: "Poppins-Regular", Helvetica;
+  color: #000;
+  font-size: 30px;
+  font-weight: 700;
+
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.content-submit {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.content-submit input{
+  width: 130px;
+  height: 25px;
+  border-radius: 15px;
+  border: 1px solid #ffad0e;
+}
+
+.rectangle {
+  width: 300px;
+  height: 35px;
+  border-radius: 15px;
+  border: 1px solid #ffad0e;
+  font-size: 20px;
+  text-align: center;
+  font-family: "Poppins-Bold", Helvetica;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-links {
+  text-decoration: none;
+  font-family: "Poppins-Bold", Helvetica;
+  font-size: 20px;
+  font-weight: 600;
+
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-links a{
+  color: #000;
+}
+
+@media (max-width: 700px) {
+  main {
+  width: 450px;
+  height: 510px;
+  margin-top: 80px;
+  }
+
+  .content-msg {
+    width: 380px;
+  }
+
+  .footer-links {
+    width: 380px;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    width: 300px;
+    height: 500px;
+  }
+
+  .content-msg {
+    width: 250px;
+    font-size: 15px;
+  }
+
+  .rectangle {
+    width: 250px;
+    height: 30px;
+    font-size: 15px;
+  }
+
+  .footer-links {
+    width: 250px;
+  }
+}

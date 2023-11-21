@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'globals.css' %}" />
+  <link rel="stylesheet" href="{% static 'register.css' %}" />
+  <title>Register</title>
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <section class="header-section">
+        <img class="header-logo" src="{% static 'images/logo.png' %}">
+        <a class="header-logo-name" href="{% url 'home' %}">Health it!</a>
+      </section>
+      <button class="header-hamburguer"></button>
+      <ul class="nav-list">
+        <img src="{% static 'images/linestroke1.svg' %}" />
+        <section class="header-section">
+          <li><a href="{% url 'forms' %}">Avaliação</a></li>
+        </section>
+        <img src="{% static 'images/linestroke1.svg' %}" />
+        <section class="header-section">
+          <li><a href="{% url 'dashboard' %}">Sua Saúde</a></li>
+        </section>
+        <img src="{% static 'images/linestroke1.svg' %}" />
+        <section class="header-section">
+          <li><a href="{% url 'login' %}">Entrar</a></li>
+        </section>
+        <img src="{% static 'images/linestroke1.svg' %}" />
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="topnav">
+      <a class="topnav-logo-name" href="#">Health it!</a>
+    </div>
+    <div class="topnav">
+      <img class="topnav-logo" src="{% static 'images/logo.png' %}">
+    </div>
+    <div class="content">
+      <form method="post">
+        {% csrf_token %}
+        <div class="content-email">
+          <label for="email" class="email">Email</label>
+          <input id="email" class="rectangle" type="email" name="email" autocomplete="off">
+        </div>
+        <div class="content-user">
+          <label for="username" class="user">Usuário</label>
+          <input id="username" class="rectangle" type="text" name="username" autocomplete="off">
+        </div>
+        <div class="content-pw">
+          <label for="password" class="pw">Senha</label>
+          <input id="password" class="rectangle" type="password" name="password" autocomplete="off">
+        </div>
+        <div class="content-submit">
+          <input class="submit-register" type="submit" name="Registrar" value="Registrar">
+        </div>
+      </form>
+    </div>
+    <div class="footer">
+      <div class="footer-links">
+        <a href="{% url 'password_reset' %}" rel="noopener noreferrer">Esqueceu a senha</a>
+        <a href="{% url 'login' %}" rel="noopener noreferrer">Login</a>
+      </div>
+    </div>
+  </main>
+  <script src="{% static 'scripts.js' %}"></script>
+</body>
+</html>

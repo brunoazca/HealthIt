@@ -1,0 +1,81 @@
+main {
+  width: 660px;
+  height: 350px;
+  margin: auto;
+  margin-top: 90px;
+  border: 2px solid #FFAD0E;
+  border-radius: 15px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+}
+
+main a {
+  text-decoration: none;
+}
+
+main a:hover {
+  text-decoration: underline;
+}
+
+.topnav {
+  display: flex;
+  justify-content: center;
+}
+
+.topnav-logo-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  color: #FFAD0E;
+  margin-top: 15px;
+}
+
+.topnav-logo {
+  width: 94px;
+}
+
+.content {
+  display: grid;
+  justify-content: center;
+}
+
+.content-msg {
+  text-align: center;
+
+  margin-top: 20px;
+}
+
+.content-msg #msg-email {
+  color: #000;
+  font-family: "Poppins-Bold", Helvetica;
+  font-size: 20px;
+  font-weight: 600;
+
+  margin-bottom: 10px;
+}
+
+.content-msg #msg-spam {
+  color: #000;
+  font-family: "Poppins-Bold", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+@media (max-width: 700px) {
+  main {
+    width: 90%;
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-msg #msg-spam {
+    width: 75vw;
+    font-size: 15px;
+  }
+
+  .content-msg #msg-email {
+    width: 75vw;
+    font-size: 15px;
+  }
+}

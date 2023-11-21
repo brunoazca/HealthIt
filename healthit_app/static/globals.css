@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header a {
+  text-decoration: none;
+}
+
+.header-section li a:hover {
+  color: #707070
+}
+
+.header {
+  background-color: black;
+  padding-inline: 16px;
+}
+
+.nav {
+  height: 78px;
+  margin-inline: auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-section {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  height: 63px;
+}
+
+.header-logo-name {
+  font-family: 'Outfit-Regular', Helvetica;
+  font-weight: 800;
+  font-size: 40px;
+  color: rgb(255,184,0);
+  margin-left: 15px;
+}
+
+.nav-list {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+
+.nav-list a {
+  font-family: "Outfit-Regular", Helvetica;
+  font-weight: 400;
+  font-size: 24px;
+  color: white;
+  padding-block: 16px;
+}
+
+.header-hamburguer {
+  display: none;
+  border: none;
+  background: none;
+  border-top: 3px solid #fff;
+  cursor: pointer;
+}
+
+.header-hamburguer::before,
+.header-hamburguer::after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 3px;
+  background: #fff;
+  margin-top: 5px;
+  position: relative;
+  transition: 0.3s;
+}
+
+@media (max-width: 750px) {
+  .header-hamburguer {
+    display: block;
+    z-index: 1;
+  }
+  
+  .nav-list {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    clip-path: circle(100px at 90% -50%);
+    transition: 1s ease-out;
+
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0;
+    pointer-events: none;
+  }
+
+  .nav-list a {
+    font-size: 24px;
+    opacity: 0;
+  }
+
+  .nav-list img {
+    display: none;
+  }
+
+  .nav-list li:nth-child(1) a {
+    transition: 0.5s 0.2s;
+  }
+
+  .nav-list li:nth-child(2) a {
+    transition: 0.5s 0.4s;
+  }
+
+  .nav-list li:nth-child(3) a {
+    transition: 0.5s 0.6s
+  }
+
+  .nav.active .nav-list {
+    clip-path: circle(1500px at 90% -50%);
+    pointer-events: all;
+  }
+
+  .nav.active .nav-list a {
+    opacity: 1;
+  }
+
+  .nav.active .header-hamburguer {
+    position: fixed;
+    top: 26px;
+    right: 16px;
+    border-top-color: transparent;
+  }
+
+  .nav.active .header-hamburguer::before {
+    transform: rotate(135deg);
+  }
+
+  .nav.active .header-hamburguer::after {
+    transform: rotate(-135deg);
+    top: -7px;
+  }
+}
+
+@media (max-width: 360px) {
+  .header-logo-name {
+    font-size: 32px;
+    text-align: center;
+  }
+}

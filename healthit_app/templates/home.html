@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{% static 'estilos.css' %}" />
+    <link rel="stylesheet" href="{% static 'globals.css' %}" />
+  </head>
+  <body>
+    <div class="home">
+      <div class="overlap-wrapper">
+        <div class="overlap">
+          <header class="header">
+            <div class="overlap-group">
+              <img class="line-stroke" src="{% static 'images/linestroke1.svg' %}" />
+              <img class="img" src="{% static 'images/linestroke2.svg' %}" />
+              <a href="{% url 'forms' %}" ><div class="text-wrapper">Avaliação</div></a>
+              <a href="{% url 'dashboard' %}" ><div class="div">Sua Saúde</div></a>
+            </div>
+            <div class="overlap-2">
+              <img class="line-stroke-2" src="{% static 'images/linestroke1.svg' %}" />
+              <a href="{% url 'login' %}" 
+                ><div class="text-wrapper-2">Entrar</div></a
+              >
+            </div>
+            <img class="logo" src="{% static 'images/logo.png' %}" />
+            <a href="{% url 'home' %}" >
+              <div class="text-wrapper-3"> Health it!</div>
+                <div class="lista_wp3"
+          
+          </header>
+          <div class="block">
+          </br>
+            {% if request.user.is_authenticated %}
+              Bem vindo, <b>{{request.user.username}}</b><br>
+              <a href="/users/logout"> Logout </a>
+            {% endif %}
+            {% if not request.user.is_authenticated %}
+              Você não está logado<br>
+              <a href="/users/login"> Login </a>
+            {% endif %}
+            <div class="overlap-3">
+              <div class="logo-entrar">
+                <div class="overlap-4">
+                  <div class="group">
+                    <div class="overlap-group-2">
+                      <div class="rectangle"></div>
+                      <div class="text-wrapper-4"><a href="{% url 'forms' %}" style="text-decoration:none;color:#FFB800;">Comece agora!</a></div>
+                    </div>
+                  </div>
+                  <div class="text-wrapper-5">Clique aqui e</div>
+                  <img class="logo-2" src="{% static 'images/logo.png' %}" />
+                </div>
+              </div>
+              <div class="overlap-group-wrapper">
+                <div class="overlap-5">
+                  <div class="text-wrapper-6">Health it now!</div>
+                  <img class="image" src="{% static 'images/image3.png' %}" />
+                  <img class="image-2" src="{% static 'images/image4.png' %}" />
+                </div>
+              </div>
+              <div class="img-2">
+                <p class="cuide-da-sua-sa-de">Cuide da sua saúde de<br />forma FÁCIL e INTUITIVA...</p>
+                <div class="overlap-6">
+                  <img class="image-3" src="{% static 'images/image6.png' %}" /> <img class="image-4" src="{% static 'images/image5.png' %}" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="sobre_nos">
+      <div class="imgs">
+        <div class="imagem1">
+          <img class="imagem__conheca" src="{% static 'images/sobre_nos/conheca_img.jpg' %}" alt="Conheca">
+          <div class ="conheca__overlay">
+            <div class="conheca_txt">CONHEÇA</div>
+          </div>
+        </div>
+      </div>
+      <div class="imgs">
+        <div class="imagem2">
+          <img class="imagem__cuide" src="{% static 'images/sobre_nos/cuidenovo.png' %}" alt="Cuide">
+          <div class ="cuide__overlay">
+            <div class="cuide_txt">CUIDE</div>
+          </div>
+        </div>
+        <div class="imagem3">
+          <img class="imagem__mude" src="{% static 'images/sobre_nos/mude_img.webp' %}" alt="Mude">
+          <div class ="mude__overlay">
+            <div class="mude_txt">MUDE</div>
+          </div>
+        </div>
+      </div>
+
+        <div class="sobre_nos__title">
+          <p>Sobre nós</p>
+        </div>
+        <div class="sobre_nos__text">
+          <p>
+          Mussum Ipsum, cacilds vidis litro abertis. Eu nunca mais boto a boca num copo de cachaça, agora eu só uso canudis! Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. Paisis, filhis, espiritis santis.
+          Ajudando a cada dia mais e mais pessoas a melhorar a qualidade de vida, nós somos uma plataforma na qual você pode ter total controle da sua saúde.  
+          Health It! é muito mais que um site ou aplicativo. Nós somos um estilo de vida, afinal, </p>
+        </div>
+        <div class="sobre_nos__subtitle">
+        <p>Acompanhar é cuidar.</p>
+        </div>
+    
+    
+    
+    
+    
+    </div>
+  </body>
+</html>

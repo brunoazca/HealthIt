@@ -1,0 +1,168 @@
+main {
+  width: 660px;
+  height: 510px;
+  margin: auto;
+  margin-top: 90px;
+  border: 2px solid #FFAD0E;
+  border-radius: 15px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+}
+
+main a {
+  text-decoration: none;
+}
+
+main a:hover {
+  text-decoration: underline;
+}
+
+.topnav {
+  display: flex;
+  justify-content: center;
+}
+
+.topnav-logo-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  color: #FFAD0E;
+  margin-top: 15px;
+}
+
+.topnav-logo {
+  width: 94px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  color: #000;
+  font-family: "Poppins-Bold", Helvetica;
+  font-size: 33px;
+  font-weight: 600;
+}
+
+.content-user {
+  width: 410px;
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content-pw {
+  width: 410px;
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content-submit {
+  display: flex;
+  justify-content: center;
+}
+
+.submit-login {
+  width: 50px;
+  height: 30px;
+  border-radius: 15px;
+  border: 1px solid;
+  border-color: #ffad0e;
+  margin: 30px;
+}
+
+.rectangle {
+  width: 200px;
+  height: 35px;
+  border-radius: 15px;
+  border: 1px solid;
+  border-color: #ffad0e;
+  font-size: 20px;
+  text-align: center;
+  font-family: "Poppins-Bold", Helvetica;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-links {
+  text-decoration: none;
+  font-family: "Poppins-Bold", Helvetica;
+  font-size: 20px;
+  font-weight: 600;
+  
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-links a{
+  color: #000;
+}
+
+@media (max-width: 700px) {
+  main {
+    width: 450px;
+    height: 510px;
+    margin-top: 80px;
+  }
+  
+  .content-user {
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .content-pw {
+    width: 350px;
+  }
+
+  .footer-links {
+    width: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    width: 300px;
+    height: 550px;
+    margin-top: 80px;
+  }
+
+  .content {
+    font-size: 25px;
+  }
+
+  .content-user {
+    width: 350px;
+    margin-top: 20px;
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+  }
+
+  .user {
+    margin-bottom: 30px;
+  }
+  
+  .content-pw {
+    width: 350px;
+    margin-top: 30px;
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+  }
+
+  .pw {
+    margin-bottom: 30px;
+  }
+  
+  .footer-links {
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    width: 350px;
+  }
+}

@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+  </head>
+  <body>
+    <div class="forms-page">
+      <header class="header">
+        <div class="overlap-group">
+          <img class="line-stroke" src="{% static 'images/linestroke1.svg' %}" />
+          <img class="img" src="{% static 'images/linestroke2.svg' %}" />
+          <a href="{% url 'forms' %}" ><div class="text-wrapper">Avaliação</div></a
+          >
+          <a href="{% url 'dashboard' %}" ><div class="div">Sua Saúde</div></a>
+        </div>
+        <div class="overlap-2">
+          <img class="line-stroke-2" src="{% static 'images/linestroke1.svg' %}" />
+          <a href="{% url 'login' %}" 
+            ><div class="text-wrapper-2">Entrar</div></a
+          >
+        </div>
+        <img class="logo" src="{% static 'images/logo.png' %}" />
+        <a href="{% url 'home' %}" >
+          <div class="text-wrapper-3">Health it!</div></a>
+      </header>
+    </div>
+     {% if request.user.is_authenticated %}
+    {% endif %}
+    {% if not request.user.is_authenticated %}
+    <br>
+    <br>  
+    <br>
+    <br>
+    <br>
+      Você não está logado<br>
+      <a href="/users/login"> Login </a>
+    {% endif %}
+    <br>
+      <br>  
+      <br>
+      <br>
+      <br>
+    <h2>Quantas horas de sono diárias você tem em média?</h2>
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Enviar</button>
+    </form>
+  </body>
+</html>
