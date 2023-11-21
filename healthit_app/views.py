@@ -9,9 +9,10 @@ def forms(request):
   if request.method == 'POST':
     form = EscolhaForm(request.POST)
     if form.is_valid():
-        sono = form.cleaned_data['sono']
+      sono = form.cleaned_data['sono']
           # Faça algo com a escolha selecionada, como salvar no banco de dados
-        return render(request, 'dashboard.html', {'sono': sono})
+      request.session['sono'] = sono
+      return render(request, 'dashboard.html', {'sono': sono})
   else:
     form = EscolhaForm()
 
@@ -51,6 +52,7 @@ def login_user(request):
 
 def dashboard(request):
   context = {
+      'sono' : request.session.get('sono', None),
       'title': 'My Dashboard',
       'users': [
           {'name': 'Alice', 'email': 'alice@example.com'},

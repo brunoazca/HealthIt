@@ -25,14 +25,19 @@
             <img class="logo" src="{% static 'images/logo.png' %}" />
             <a href="{% url 'home' %}" >
               <div class="text-wrapper-3"> Health it!
-                <div class="lista_wp3">
-                 <ul>
-                   <li><a href="#sobre_nos">Sobre Nós:</a></li>
-                 </ul> 
+                <div class="dropdown-content">
+                  <!-- Adicione os itens do dropdown aqui, se necessário -->
+                  <a href="#">Item 1</a>
+                  <a href="#">Item 2</a>
+                  <!-- ... -->
                 </div>
+              </div>
+              <div class="sobre_nos__title">
+                <p class="scroll-link" data-target=".sobre_nos">Sobre nós</p>
               </div>
           </header>
           <div class="block">
+          
           </br>
             {% if request.user.is_authenticated %}
               Bem vindo, <b>{{request.user.username}}</b><br>

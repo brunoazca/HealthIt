@@ -4,7 +4,7 @@ const data = {
     mediaPopBrasileiraAtividadeFisica: 100,
     pesoIdeal: 65,
     horasDormidas: sono,
-    horasDormidasIdeal: 7,
+    horasDormidasIdeal: 8,
     mediaAtividadeFisica: 190,
     mediaIdealAtividadeFisica: 200,
     mediaMesesAtividadeFisica: [100, 200, 100, 300, 250],
