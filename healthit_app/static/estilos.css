@@ -165,7 +165,9 @@ body {
   color: white;
   cursor: pointer;
 }
-
+.lista_wp3{
+  color:red;
+}
 
 .home .block {
   position: absolute;
