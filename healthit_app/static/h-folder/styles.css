@@ -1,0 +1,153 @@
+/* IMAGENS SOBRE NOS */
+/* IMG - CONHECA */
+
+.sobre_nos{
+  display: flex;
+  justify-content: center;
+}
+
+.imgs {
+  display: flex;
+  position:relative;
+}
+
+.imagem1 {
+  position: relative;
+  left: 50px;
+  width: 700px;
+}
+.imagem__conheca{
+  display:block;
+  width: 100%;
+  border: 1px solid black;
+}
+.conheca__overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 223, 13, 0.5);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+
+.imagem1:hover .conheca__overlay{
+  opacity: 1;
+}
+.conheca_txt {
+  font-size: 6em;
+  font-weight:bold;
+}
+/* IMG - CUIDE */
+.imagem2 {
+  position: relative;
+  top: -3.5px;
+  left:50px; 
+  width: 700px;
+}
+.imagem__cuide{
+  display:block;
+  width: 100%;
+  border: 1px solid black;
+}
+.cuide__overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(191, 191, 191, 0.5);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.imagem2:hover .cuide__overlay{
+  opacity: 1;
+}
+.cuide_txt {
+  font-size: 6em;
+  font-weight:bold;
+
+}
+/*IMG - MUDE*/
+.imagem3 {
+  position: relative; 
+  left:50px;
+  width: 700px;
+}
+.imagem__mude{
+  display:block;
+  width: 100%;
+  border: 1px solid black;
+}
+.mude__overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(219, 255, 3, 0.5);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.imagem3:hover .mude__overlay{
+  opacity: 1;
+}
+.mude_txt {
+  font-size: 6em;
+  font-weight:bold;
+}
+
+.sobre_nos__title {
+  font-size: 7em;
+  font-weight: bold;
+  font-family: "Outfit-ExtraBold", Helvetica;
+  color:#FFB800;
+  text-align: center;
+  margin-top:40px;
+  justify-content:center;
+}
+.sobre_nos__text {
+  display:flex;
+  font-size: 2em;
+  font-weight: normal;
+  font-family: "Outfit", Helvetica;
+  color:black;
+  text-align: center;
+  justify-content:center;
+  margin-inline:50px;
+  margin-top:40px;
+  width:1500px;
+}
+.sobre_nos__subtitle {
+  font-size: 3em;
+  font-family: "Outfit-ExtraBold", Helvetica;
+  color:#FFB800;
+  text-align: center;
+  margin-top:10px;
+  justify-content:center;
+  }
+.img_conteudo {
+  display:block;
+  position:relative;
+  margin-top:40px;
+  left:0;
+  right:0;
+  border: solid black;
+}

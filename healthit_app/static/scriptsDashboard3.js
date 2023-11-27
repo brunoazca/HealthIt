@@ -1,19 +1,38 @@
 
-const data = {
-    mesesData: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio'],
-    mediaPopBrasileiraAtividadeFisica: 100,
-    pesoIdeal: 65,
-    horasDormidas: sono,
-    horasDormidasIdeal: 8,
-    mediaAtividadeFisica: 190,
-    mediaIdealAtividadeFisica: 200,
-    mediaMesesAtividadeFisica: [100, 200, 100, 300, 250],
-    peso: [60, 75, 70, 75, 65],
-    nutrientes: [30, 50, 20],
-    sal: { usuario: '5g', ideal: '6g' },
-    agua: { usuario: '2L', ideal: '2.5L' },
-    carneVermelha: { usuario: '200g', ideal: '150g' },    
-};
+document.addEventListener('DOMContentLoaded', function() {
+    fetch("{% url 'obter_respostas_json' %}")
+        .then(response => response.json())
+        .then(data => {
+            // Manipule os dados recebidos aqui
+            console.log(data.respostas);
+
+            const data = {
+                mesesData: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio'],
+                mediaPopBrasileiraAtividadeFisica: 100,
+                pesoIdeal: 65,
+                horasDormidasIdeal: 8,
+                mediaAtividadeFisica: 150,
+                mediaIdealAtividadeFisica: 200,
+                mediaMesesAtividadeFisica: [100, 200, 100, 300, 250],
+                peso: [60, 75, 70, 75, 65],
+                nutrientes: [30, 50, 20],
+                sal: { usuario: '5g', ideal: '6g' },
+                agua: { usuario: '2L', ideal: '2.5L' },
+                carneVermelha: { usuario: '200g', ideal: '150g' },    
+            };
+
+            // Iterar sobre as respostas e adicionar ao objeto 'data'
+            for (var i = 0; i < data.respostas.length; i++) {
+                var resposta = data.respostas[i];
+                data.horasDormidas = resposta.horas_sono;
+                // Adicione outros campos conforme necessário
+            }
+
+            // Agora 'data' terá as propriedades atualizadas com os valores das respostas
+            console.log(data);
+        })
+        .catch(error => console.error('Erro ao obter dados:', error));
+});
 
 // Functions
 

@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="{% static 'forms.css' %}" />
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+  </head>
+  <body>
+    <div class="forms-page">
+      <header class="header">
+        <div class="overlap-group">
+          <img class="line-stroke" src="{% static 'images/linestroke1.svg' %}" />
+          <img class="img" src="{% static 'images/linestroke2.svg' %}" />
+          <a href="{% url 'forms' %}" ><div class="text-wrapper">Avaliação</div></a
+          >
+          <a href="{% url 'dashboard' %}" ><div class="div">Sua Saúde</div></a>
+        </div>
+        <div class="overlap-2">
+          <img class="line-stroke-2" src="{% static 'images/linestroke1.svg' %}" />
+          <a href="{% url 'login' %}" 
+            ><div class="text-wrapper-2">Entrar</div></a
+          >
+        </div>
+        <img class="logo" src="{% static 'images/logo.png' %}" />
+        <a href="{% url 'home' %}" >
+          <div class="text-wrapper-3">Health it!</div></a>
+      </header>
+    </div>
+    <div class = "container" >
+      <form method="post">
+        {% csrf_token %}
+        <div>
+          <h1>1. Quantas horas você dormiu esta noite?</h1>
+          <input type="number" name="Title">
+        </div>
+
+        <div>
+          <h1>2. Você tem dificuldade para dormir?</h1>
+          <input type="radio" name="S2" value="S2a" id="opcao_S2a">
+          <label class="custom-radio" for="opcao_S2a">Não</label><br>
+
+          <input type="radio" name="S2" value="S2b" id="opcao_S2b">
+          <label class="custom-radio" for="opcao_S2b">De vez em quando</label><br>
+
+          <input type="radio" name="S2" value="S2c" id="opcao_S2c">
+          <label class="custom-radio" for="opcao_S2c">Bastante</label><br>
+
+          <input type="radio" name="S2" value="S2d" id="opcao_S2d">
+          <label class="custom-radio" for="opcao_S2d">Toda Noite!</label><br>
+        </div>
+
+        <div>
+          <h1>3. Você consome alguma substância que contenha cafeína próximo ao horário de sono?</h1>
+          <input type="radio" name="S3" value="S3a" id="opcao_S3a">
+          <label class="custom-radio" for="opcao_S3a">Não</label><br>
+
+          <input type="radio" name="S3" value="S3b" id="opcao_S3b">
+          <label class="custom-radio" for="opcao_S3b">De vez em quando</label><br>
+
+          <input type="radio" name="S3" value="S3c" id="opcao_S3c">
+          <label class="custom-radio" for="opcao_S3c">Bastante</label><br>
+
+          <input type="radio" name="S3" value="S3d" id="opcao_S3d">
+          <label class="custom-radio" for="opcao_S3d">Toda Noite!</label><br>
+        </div>
+
+        <div>
+          <h1>4. Você usa o celular enquanto está tentando dormir?</h1>
+          <input type="radio" name="S4" value="S4a" id="opcao_S4a">
+          <label class="custom-radio" for="opcao_S4a">Sim</label><br>
+
+          <input type="radio" name="S4" value="S4b" id="opcao_S4b">
+          <label class="custom-radio" for="opcao_S4b">Não</label><br>
+        </div>
+
+
+
+        <input type = "submit" value = "Concluir" class="submit-button submit-cylinder">
+      </form>
+    </div>
+  </body>
+</html>

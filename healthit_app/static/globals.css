@@ -12,8 +12,10 @@
 }
 
 .header {
-  background-color: black;
-  padding-inline: 16px;
+  background-color: black; 
+  z-index: 1;
+  position: fixed;
+  width: 100%;
 }
 
 .nav {
@@ -32,6 +34,7 @@
 
 .header-logo {
   height: 63px;
+  margin-left: 10px;
 }
 
 .header-logo-name {
@@ -44,6 +47,7 @@
 
 .nav-list {
   display: flex;
+  margin-right: 10px;
   gap: 20px;
   list-style: none;
 }
@@ -80,7 +84,7 @@
 @media (max-width: 750px) {
   .header-hamburguer {
     display: block;
-    z-index: 1;
+    z-index: 2;
   }
   
   .nav-list {

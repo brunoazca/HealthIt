@@ -3,20 +3,31 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .forms import EscolhaForm
-from .models import Escolha
+from .models import Escolha, RespostaFormulario
+from django.http import JsonResponse
 
 def forms(request):
   if request.method == 'POST':
-    form = EscolhaForm(request.POST)
-    if form.is_valid():
-      sono = form.cleaned_data['sono']
-          # Faça algo com a escolha selecionada, como salvar no banco de dados
-      request.session['sono'] = sono
-      return render(request, 'dashboard.html', {'sono': sono})
+    horas_sono = request.POST.get('sono')
+    # Adicione mais campos conforme necessário
+  
+    RespostaFormulario.objects.create(
+      user=request.user,
+      horas_sono=horas_sono,
+      # Preencha outros campos conforme necessário
+    )
+      
+    return render(request, 'dashboard.html')
   else:
-    form = EscolhaForm()
+    
+    return render(request, 'forms_html/forms.html')
 
-  return render(request, 'forms.html', {'form': form})
+def obter_respostas_json(request):
+  respostas_usuario = RespostaFormulario.objects.filter(user=request.user)
+  respostas_json = [{'horas_sono': resposta.horas_sono} for resposta in respostas_usuario]
+  return(respostas_json)
+
+  return JsonResponse({'respostas': respostas_json})
   
 def home(request):
    return render(request, "home.html");
